@@ -1,15 +1,34 @@
 package testecursogames;
 
+import java.util.ArrayList;
+
 public class Game {
 	public static void main(String[] args) {
 		
 		Player player = new Player();
-		ElfInimigo elf = new ElfInimigo(10);
+		ArrayList<Inimigo> inimigos = new ArrayList<Inimigo>();
 		
-		elf.tomarDano();
+		inimigos.add(new ElfInimigo(100));
+		inimigos.add(new ElfInimigo(100));
+		inimigos.add(new ElfInimigo(100));
+		inimigos.add(new ElfInimigo(100));
+		inimigos.add(new ElfInimigo(100));
 		
-		System.out.println(elf.getVida());
+		inimigos.get(0).tomarDano();
+		
+		for(int i = 0; i < inimigos.size(); i++) {
+			Inimigo inimigoLocal = inimigos.get(i);
+			if(i == 1) {
+				inimigoLocal.tomarDano();
+				System.out.println(inimigoLocal.vida);
+			}else {
+				System.out.println(inimigoLocal.vida);
+			}
 		}
+		}
+	
+		
 	}
+
 
 
