@@ -9,7 +9,7 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
-public class Game extends Canvas implements Runnable, KeyListener {
+public class Game extends Canvas implements Runnable, KeyListener{
 	
 	public static int WIDTH = 480, HEIGHT = 480;
 	public Player player;
@@ -18,7 +18,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		this.addKeyListener(this);
 		this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 		
-		player = new Player(0,0);
+		player = new Player(10,10);
 	}
 	
 	public void tick() {
@@ -77,24 +77,47 @@ public class Game extends Canvas implements Runnable, KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			player.right = true;
+		}else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+			player.left = true;
 		}
-		
-		
-		
+		if (e.getKeyCode() == KeyEvent.VK_UP) {
+			player.up = true;
+		}else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+			player.down = true;
+		}
 	}
+
 	@Override
 	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-			player.right = false;
+			player.right = true;
+		}else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+			player.left = true;
 		}
-		
+		if (e.getKeyCode() == KeyEvent.VK_UP) {
+			player.up = true;
+		}else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+			player.down = true;
+		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
-	}
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			player.right = false;
+		}else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+			player.left = false;
+		}
+		if (e.getKeyCode() == KeyEvent.VK_UP) {
+			player.up = false;
+		}else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+			player.down = false;
+		}
+	}	
 }
+

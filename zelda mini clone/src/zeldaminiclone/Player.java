@@ -16,7 +16,13 @@ public class Player extends Rectangle {
 	public void tick() {
 		if(right) {
 			x+=spd;
-		
+		}else if(left) {
+			x-=spd;
+		}
+		if(up) {
+			y-=spd;
+		}else if(down) {
+			y+=spd;
 		}
 	}
 	
