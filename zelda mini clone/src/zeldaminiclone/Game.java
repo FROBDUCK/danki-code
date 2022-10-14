@@ -71,7 +71,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println("chamando game looping");
+			System.out.println("looping");
 		}
 	}
 
@@ -80,34 +80,21 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			player.right = true;
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-			player.left = true;
-		}
-		if(e.getKeyCode() == KeyEvent.VK_UP) {
-			player.up = true;
-		}
-		else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-			player.down = true;
-		}
+		
 		
 		
 	}
-
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			player.right = false;
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-			player.left = false;
-		}
-		if(e.getKeyCode() == KeyEvent.VK_UP) {
-			player.up = false;
-		}
-		else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-			player.down = false;
-		}
 		
 	}
 
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
