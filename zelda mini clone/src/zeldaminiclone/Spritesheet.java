@@ -11,6 +11,8 @@ public class Spritesheet {
 	
 	public static BufferedImage player_front;
 	
+	public static BufferedImage tileWall;
+	
 	public Spritesheet() {
 		try {
 			
@@ -20,6 +22,7 @@ public class Spritesheet {
 			e.printStackTrace();
 		}
 		player_front= Spritesheet.getSprite(0, 11, 16,16);
+		tileWall = Spritesheet.getSprite(304,219, 16,16);
 	}
 	
 	public static BufferedImage getSprite(int x,int y, int width, int height) {
