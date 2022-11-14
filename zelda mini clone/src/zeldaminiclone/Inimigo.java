@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Inimigo extends Rectangle {
 	
-	public int spd = 4;
+	public int spd = 2;
 	public int right = 1,up = 0,down = 0,left = 0;
 	
 	public int curAnimation = 0;
@@ -25,12 +25,24 @@ public class Inimigo extends Rectangle {
 		super(x,y,32,32);
 	}
 	
+	public void perseguirPlayer() {
+		Player p = Game.player;
+		if(x < p.x && World.isFree(x+spd, y)) {
+			x+=spd;
+		}else if (x > p.x && World.isFree(x-spd, y)) {
+			x-=spd;
+		}
+		
+		if (y < p.y && World.isFree(x, y+spd)) {
+			y+=spd;
+		}else if(y > p.y && World.isFree(x, y-spd)) {
+			y-=spd;
+		}
+	}
+	
 	public void tick() {
 		boolean moved = true;
-		if(right == 1) {
-			x++;
-			
-		}
+		perseguirPlayer();
 		if (moved) {
 		curFrames++;
 		if(curFrames == targetFrames) {
