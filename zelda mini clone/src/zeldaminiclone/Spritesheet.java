@@ -12,6 +12,7 @@ public class Spritesheet {
 	public static BufferedImage[] player_front;
 	
 	public static BufferedImage tileWall;
+	public static BufferedImage[] inimigo_front;
 	
 	public Spritesheet() {
 		try {
@@ -22,9 +23,13 @@ public class Spritesheet {
 			e.printStackTrace();
 		}
 		player_front= new BufferedImage[2];
+		inimigo_front= new BufferedImage[2];
 		
 		player_front[0] = Spritesheet.getSprite(0, 11, 16, 16);
 		player_front[1] = Spritesheet.getSprite(16, 11, 16, 16);
+		
+		inimigo_front[0] = Spritesheet.getSprite(146, 211, 16, 16);
+		inimigo_front[1] = Spritesheet.getSprite(164, 211, 16, 16);
 		
 		tileWall = Spritesheet.getSprite(304,219, 16,16);
 	}

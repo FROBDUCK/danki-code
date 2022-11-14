@@ -11,7 +11,7 @@ public class Bullet extends Rectangle {
 	
 	public int frames = 0;
 	
-	public Bullet(int x, int y) {
+	public Bullet(int x, int y, int i) {
 		super(x+16,y+16,10,10);
 		this.dir = dir;
 		
